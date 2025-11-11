@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #B07C85;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  background: linear-gradient(180deg, #f9cb9c 0%, #f0d9ac 100%);
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid #8A3C52;
+  padding: 10px 30px;
+  position: relative;
+}
+
+.logo img {
+  width: 130px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav > a {
+  font-size: 20px;
+  color:#8A3C52;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #f0d9ac 100%,  #f9cb9c 0%)
+}
+
+.principal {
+  text-align: center;
+  margin-bottom: 50px;
+}
+nav > a:hover {
+  background-color: #8A3C52;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+#imgrodape {
+  width: 80px;
+  transition: transform 0.3s ease;
+}
+
+#imgrodape:hover {
+  transform: scale(1.05);
+}
+
+.info-rodape {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .rodape {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.rodape {
+  background-color: #8A3C52;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  flex-wrap: wrap; /* 🔹 garante responsividade */
+  text-align: center;
+  font-size: 18px;
+}
+
+.rodape ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 18px;
+}
+
+.rodape > p{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  
+  font-size: 18px;
+}
+#contato {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  font-size: 18px;
+  background-color: #8A3C52;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
