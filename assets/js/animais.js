@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-
   // ========================
   // SLIDER
   // ========================
@@ -32,11 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
   // ========================
   const input = document.getElementById("campo-pesquisa");
   const btn = document.getElementById("btn-pesquisa");
-  const resultado = document.querySelector(".animais"); // scroll até os resultados
+  const resultado = document.querySelector(".animais");
 
   function pesquisar(e) {
-    // se for keyup, só rodar no Enter
+    // só ativa no Enter quando digitando
     if (e && e.type === "keyup" && e.key !== "Enter") return;
+
+    if (!input) return;
 
     const termo = input.value.toLowerCase();
     const cards = document.querySelectorAll(".animal");
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     cards.forEach(card => {
       const nome = card.querySelector("h1").textContent.toLowerCase();
+
       if (nome.includes(termo)) {
         card.style.display = "block";
         encontrou = true;
@@ -52,11 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    // Scroll suave até resultados
+    // Scroll suave para resultados
     if (resultado) {
-  const topPos = resultado.getBoundingClientRect().top + window.pageYOffset - 120; // 120 = altura do header + margem
-  window.scrollTo({ top: topPos, behavior: "smooth" });
-}
+      const topPos = resultado.getBoundingClientRect().top + window.pageYOffset - 200;
+      window.scrollTo({ top: topPos, behavior: "smooth" });
+    }
 
     if (!encontrou && termo !== "") {
       alert("Nenhum animal encontrado.");
