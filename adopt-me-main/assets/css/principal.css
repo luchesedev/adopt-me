@@ -1,0 +1,355 @@
+/* ===========================
+   RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7e6ec;
+  color: #8A3C52;
+  padding-top: 200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: #f8e5c9;
+  border-bottom: 3px solid #8A3C52;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.logo img {
+  width: 130px;
+  transition: transform 0.3s;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+/* BOTÃO FALE CONOSCO */
+#contato {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #8A3C52;
+  color: #f8e5c9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+#contato:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* BOTÃO MENU MOBILE */
+.botao-menu {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #8A3C52;
+  cursor: pointer;
+  display: none;
+}
+
+/* NAV */
+.nav-itens {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 80px;
+}
+.list-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.itens a {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 15px;
+  color: #8A3C52;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.itens a:hover {
+  background: #8A3C52;
+  color: #f8e5c9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+   RESPONSIVO HEADER
+=========================== */
+@media (max-width: 870px) {
+  header {
+    position: fixed !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .botao-menu {
+    display: block;
+  }
+  .nav-itens {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: #f9cb9c;
+    border-top: 2px solid #8A3C52;
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+  .nav-itens.mostrar {
+    display: flex;
+  }
+  .list-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  #contato {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+main{
+  flex-grow: 1;
+}
+/* ===========================
+   Banner Principal
+=========================== */
+.meu-css1 {
+    display: flex; 
+    align-items: center;
+    background-color: #8A3C52 !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px !important;
+    gap: 60px;
+    padding: 0px !important;
+}
+
+.slider {
+    position: relative;
+    width: 420px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 18px 0px 0px 18px; 
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+.texto {
+    text-align: center;
+    max-width: 630px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.texto h2 {
+    color: #f8e5c9;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.texto p {
+    color: #f8e5c9;
+}
+
+.btn-sobrenos {
+    display: inline-block;
+    background-color: #f6c7a8;
+    color: #8A3C52;
+    padding: 10px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.btn-sobrenos:hover {
+    background-color: #8A3C52;
+    color: #f8e5c9;
+    transform: scale(1.03);
+}
+
+.button-sobrenos {
+    align-self: center;
+}
+
+@media (max-width: 992px) {
+
+    .meu-css1 {
+        flex-direction: column; 
+        padding: 30px; 
+        gap: 30px;
+    }
+
+    .slider {
+        width: 100%; 
+        height: 250px; 
+        border-radius: 18px 18px 0px 0px; 
+    }
+    
+    .texto {
+        align-items: center; 
+        text-align: center;
+    }
+    
+    .texto h2, .texto p {
+        max-width: 90%;
+    }
+
+    .button-sobrenos {
+        margin-bottom: 20px; 
+        align-self: center;
+    }
+}
+
+
+/* ===========================
+   SEÇÃO ADOÇÃO / DOAÇÃO / DENÚNCIA
+=========================== */
+.opcoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin-top: 40px;
+}
+
+.opcao {
+  width: 320px;
+  min-height: 380px;
+  border-radius: 20px;
+  background: #f8e5c9;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 0 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+.opcao:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.opcao h2 {
+  background: #8A3C52;
+  color: #f8e5c9;
+  font-size: 34px;
+  padding: 10px 0;
+  margin-left: -30px;
+  width: calc(100% + 60px);
+  border-radius: 15px 15px 0 0;
+}
+.opcao a {
+  background: #f6c7a8;
+  color: #8A3C52;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+.opcao a:hover {
+  background: #8A3C52;
+  color: #f8e5c9;
+  transform: scale(1.05);
+}
+
+/* ===========================
+   JANELAS / CARDS DE SERVIÇOS
+=========================== */
+.janelas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.janela {
+  width: 350px;
+  min-height: 380px;
+  background: #f8e5c9;
+  border-radius: 20px;
+  border: 3px solid #8A3C52;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.janela:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+.cachorro4 {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.escrita {
+  padding: 5px 30px 30px;
+}
+.janela h1 {
+  margin-bottom: 20px;
+}
+.janela p {
+  margin: 20px;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+.meu-rodape {
+  background: #8A3C52 !important;
+}
+.meu-rodape ul {
+  list-style: none;
+  padding-left: 0;
+}
