@@ -14,7 +14,7 @@
 }
 
 .banner {
-  width: 1300px;
+
   height: 400px;
   background-color: #fef7e3;
   color: #B07C85;
@@ -23,6 +23,9 @@
   align-items: center;
   padding: 40px;
   margin-top: 250px;
+  width: 100%;       /* antes era 1300px */
+  max-width: 1300px; /* limita no desktop */
+  box-sizing: border-box; /* inclui padding na largura */
 }
 
 .banner-conteudo {
@@ -91,6 +94,7 @@ body {
   background-color: #fef7e3;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -135,6 +139,7 @@ nav > a {
   margin-right: 50px;
   margin-top: 20px;
   border: 100px #f9cb9c ;
+  
 }
 
 .slider img {
@@ -274,7 +279,69 @@ nav > a {
 .animais h1{
   font-size: 20px;
 }
+.opcoes {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  
+}
+.opcao {
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  height: 380px; /* todos iguais */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui textos e botão */
+  padding: 0 30px 30px 30px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+   background: linear-gradient(45deg, #8A3C52, #B07C85);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 50px;
 
+}
+.opcao:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.opcao > h2 {
+  background-color: #f9cb9c;
+  font-size: 34px;
+  color:#8A3C52;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  padding: 10px 0;
+  border-radius: 15px 15px 0 0;
+}
+
+.opcao > p {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+/* ===== BOTÃO "SAIBA MAIS" ===== */
+.opcao > a {
+  display: inline-block;
+  background-color: #f6c7a8;
+  color: #8A3C52;
+  padding: 10px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.opcao > a:hover {
+  background-color: #8A3C52;
+  color: white;
+  transform: scale(1.05);
+}
 .h1animal {
     display: flex;
     justify-content: center;
