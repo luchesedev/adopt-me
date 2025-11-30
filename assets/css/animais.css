@@ -14,39 +14,77 @@
 }
 
 .banner {
-
-  height: 400px;
-  background-color: #fef7e3;
-  color: #B07C85;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #fef7e3;
+  color: #B07C85;
   padding: 40px;
   margin-top: 250px;
-  width: 100%;       /* antes era 1300px */
-  max-width: 1300px; /* limita no desktop */
-  box-sizing: border-box; /* inclui padding na largura */
+  width: 100%;
+  max-width: 1300px;
+  box-sizing: border-box;
 }
 
+/* Conteúdo do Banner */
 .banner-conteudo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  margin-top: 0px;
 }
 
-.banner-conteudo h1{
+.banner-conteudo h1 {
   font-size: 50px;
   color: #210c29;
-  margin-top : -40px;
-  margin-right: 10px;
+  margin: 0;
 }
 
-.banner-conteudo h3{
+.banner-conteudo h3 {
   color: #210c29;
   margin: 0;
-  margin-right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 180px;
+  }
+
+  .banner-conteudo h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .banner-conteudo h3 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .slider {
+    max-width: 300px;
+    height: 300px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-conteudo h1 {
+    font-size: 28px;
+  }
+
+  .banner-conteudo h3 {
+    font-size: 16px;
+  }
+
+  .slider {
+    max-width: 250px;
+    height: 250px;
+  }
 }
 
 .botoes {
@@ -134,23 +172,22 @@ nav > a {
 }
 
 .slider {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;   /* Limite no desktop */
   height: 400px;
-  margin-right: 50px;
+  position: relative;
   margin-top: 20px;
-  border: 100px #f9cb9c ;
-  
 }
 
 .slider img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
   border-radius: 10px;
-  border: 3px solid #8A3C52 ;
+  border: 3px solid #8A3C52;
 }
 
 .slider img.active {
@@ -217,16 +254,15 @@ nav > a {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: all 0.3s ease;
+  transition: height  ease, object-fit  ease; /* só o que muda */
   border-radius: 10px 10px 0 0;
   border: 2px #f0d9ac solid;
 }
 
-/* TEXTOS E BOTÕES (começa escondido) */
 .escritas{
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease; /* só opacidade */
   text-align: center;
   position: absolute;
   top: 110px;
