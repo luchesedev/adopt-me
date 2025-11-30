@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+
   // ========================
   // SLIDER
   // ========================
@@ -53,11 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Scroll suave até resultados
     if (resultado) {
-      resultado.scrollIntoView({ behavior: "smooth" });
-    }
+  const topPos = resultado.getBoundingClientRect().top + window.pageYOffset - 120; // 120 = altura do header + margem
+  window.scrollTo({ top: topPos, behavior: "smooth" });
+}
 
     if (!encontrou && termo !== "") {
-      console.log("Nenhum animal encontrado.");
+      alert("Nenhum animal encontrado.");
     }
   }
 
