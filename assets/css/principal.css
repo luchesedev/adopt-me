@@ -8,12 +8,15 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f7e6ec;
+  background-color: #f0d9ac;
 }
 
 /* ===== HEADER ===== */
 header {
   background:  #f8e5c9;
   border-bottom:  3px solid #8A3C52;
+  background: linear-gradient(180deg, #f9cb9c 0%, #f0d9ac 100%);
+  border-bottom: 3px solid #8A3C52;
   padding: 15px 20px;
   position: relative;
   display: flex;
@@ -101,6 +104,52 @@ header {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .botao-menu {
+    display: block;
+  }
+
+  .nav-itens {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f9cb9c;
+    border-top: 2px solid #8A3C52;
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+
+  .nav-itens.mostrar {
+    display: flex;
+  }
+
+  .list-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Botão "Fale Conosco" no topo, centralizado */
+  #contato {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+  }
+}
+
+
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #f0d9ac 100%,  #f9cb9c 0%)
+}
 
   .botao-menu {
     display: block;
@@ -268,13 +317,20 @@ header {
   gap: 45px;
   flex-wrap: wrap;
 }
+
 .janelas {
-  
   display: flex;
   justify-content: center; 
   
   flex-wrap: wrap; 
   margin-top: 30px;}
+  justify-content: center; /* centraliza no meio */
+  /* espaço entre os cards */
+  flex-wrap: wrap; /* permite quebrar linha no celular */
+  margin-top: 30px;
+  margin: 10px 180px 10px 180px;
+  gap: 27.50px;
+}
 
 .cachorro4{
     
@@ -308,7 +364,7 @@ header {
  border-radius: 20px;
  border: 3px solid #8A3C52;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-  width: 350px;
+  width: 450px;
   height: 380px;
   overflow: hidden;
   display: flex;
@@ -320,6 +376,7 @@ header {
   transition: transform 0.3s, box-shadow 0.3s;
   margin: 25px auto; 
 }
+
   
 .janela:hover{
   transform: scale(1.05); 
@@ -329,7 +386,9 @@ header {
    padding: 5px 30px 30px 30px;
 }
 .janela p{
-  margin: 20px;
+  margin: 40px;
+  font-size: 18px;
+  
 }
 
 .janela h1{
@@ -382,3 +441,5 @@ header {
   list-style: none;
   
 }
+
+
