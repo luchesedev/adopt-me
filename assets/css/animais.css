@@ -49,7 +49,7 @@
 /* Responsividade */
 @media (max-width: 1024px) {
   .banner {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     padding: 20px;
     margin-top: 180px;
@@ -58,11 +58,12 @@
   .banner-conteudo h1 {
     font-size: 36px;
     text-align: center;
+    padding-left: 80px;
   }
 
   .banner-conteudo h3 {
     font-size: 18px;
-    text-align: center;
+    padding-left: 40px;
   }
 
   .slider {
@@ -75,6 +76,7 @@
 @media (max-width: 600px) {
   .banner-conteudo h1 {
     font-size: 28px;
+    padding-left: 90px;
   }
 
   .banner-conteudo h3 {
@@ -86,7 +88,37 @@
     height: 250px;
   }
 }
+/* Tablet */
+@media (max-width: 1024px) {
+  .botoes {
+    margin-top: 30px;          /* diminui espaço do topo */
+    display: flex;
+    flex-direction: row;     /* deixa os botões empilhados */
+    gap: 15px;                  /* espaçamento entre eles */
+    align-items: center;        /* centraliza os botões */
+  }
 
+  .btn-adote,
+  .btn-sobrenos {
+    width: 180px;               /* largura ajustada para tablet */
+    font-size: 16px;            /* tamanho da fonte menor que desktop */
+    padding: 10px 0;            /* ajuste interno */
+  }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  .btn-adote,
+  .btn-sobrenos {
+    width: 140px;               /* ainda menor no celular */
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .botoes {
+    gap: 10px;                  /* menos espaço entre botões */
+  }
+}
 .botoes {
   margin-top: 100px;
 }
