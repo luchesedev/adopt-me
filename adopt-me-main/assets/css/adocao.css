@@ -11,7 +11,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f7e6ec;
   color: #8A3C52;
-  padding-top: 100px;
+  padding-top: 150px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -142,6 +142,328 @@ header {
 =========================== */
 main{
   flex-grow: 1;
+}
+
+#carouselExample {
+    /* Removemos max-width e margin fixos, pois ele deve ocupar 100% da COLUNA DO BOOTSTRAP */
+    width: 100%; 
+    border: 5px solid rgb(211, 211, 211);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-bottom: 10%;
+}
+
+.carousel-item img {
+    height: 500px; /* Mantém a altura fixa para não pular */
+    object-fit: cover;
+    width: 100%;
+    
+}
+
+/* 2. CAIXA DE INFORMAÇÕES (Lado Direito no PC) */
+.info-container {
+    background-color: #ffffff;
+    
+    /* IMPORTANTE: Mudamos de 40% para 100% para ele encher a coluna do Bootstrap */
+    width: 100%; 
+    padding: 30px; /* Aumentei um pouco o padding para ficar mais elegante */
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1); 
+    margin-bottom: 10%;
+    /* REMOVIDO: margin-right: 330px; (Isso quebrava a responsividade) */
+    /* O Bootstrap já coloca a caixa no lugar certo com col-lg-5 */
+}
+
+/* Estilo do Título (Junior) */
+.titulocachorro {
+    color: #3f153d;
+    margin-top: 0;
+    /* Reduzi um pouco para caber melhor no celular, mas ainda grande */
+    font-size: 4rem; 
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+    line-height: 1; /* Para as letras não ficarem muito espaçadas verticalmente */
+}
+
+/* Ajuste do tamanho da fonte do título no celular */
+@media (max-width: 768px) {
+    .titulocachorro {
+        font-size: 3rem; /* Menor no celular */
+    }
+}
+
+.descricao {
+    color: #3f153d;
+    font-size: 1.5rem; /* Ajuste fino */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.adote {
+    color: #3f153d;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Lista de características */
+.info-container ul {
+    font-size: 1.1rem;
+    padding-left: 20px; /* Espaço para os marcadores da lista */
+}
+
+/* --- BOTÃO ADOTAR --- */
+.botaoadotar {
+    background-color: #3f153d;
+    color: #ffffff;
+    padding: 12px 30px;
+    width: 100%; /* Ocupa a largura total da caixa de info */
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.botaoadotar:hover {
+    background-color: #5a1e56;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.botaoadotar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- ESTILO DAS SETAS DO CARROSSEL (Mantido seu pedido) --- */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(3, 3, 3, 0.7);
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50%;
+}
+
+.carousel-control-prev, 
+.carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev:hover, 
+.carousel-control-next:hover,
+.carousel-control-prev:focus, 
+.carousel-control-next:focus {
+    background: none;
+    opacity: 1;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(128, 0, 128, 0.7) !important;
+    transform: none;
+}
+
+/* --- LAYOUT: Para os cards ficarem lado a lado --- */
+.container-cards {
+    display: flex;
+    flex-wrap: wrap; /* Se não couber na tela, joga pra linha de baixo */
+    justify-content: center; /* Centraliza os cards na tela */
+    gap: 46px; /* Espaço entre um card e outro */
+    padding: 40px 20px; /* Espaço em volta do grupo todo */
+}
+
+/* --- ESTILO DO CARD --- */
+.cartao-personalizado {
+    width: 18rem; /* Largura fixa igual ao Bootstrap padrão */
+    border: 2px solid #3f153d; /* Borda Roxa Escura */
+    border-radius: 15px; /* Bordas bem arredondadas */
+    background-color: #fff; /* Fundo branco */
+    overflow: hidden; /* Garante que a imagem não saia da borda redonda */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.cartao-personalizado:hover {
+    transform: translateY(-10px); /* O card sobe/flutua */
+    box-shadow: 0 15px 25px rgba(63, 21, 61, 0.4); /* Sombra roxa aparece */
+    border-color: #8A3C52; /* A borda muda para um tom mais claro */
+}
+
+/* --- IMAGEM DO CARD --- */
+.cartao-personalizado img {
+    height: 220px; /* Altura fixa para todos ficarem iguais */
+    object-fit: cover; /* Corta a imagem para preencher sem esticar */
+    width: 100%;
+    border-bottom: 2px solid #3f153d; /* Linha roxa separando a foto do texto */
+}
+
+/* --- TEXTOS --- */
+.cartao-personalizado .card-body {
+    text-align: center; /* Centraliza o texto */
+    padding: 20px;
+}
+
+.cartao-personalizado .card-title {
+    color: #3f153d; /* Título Roxo Escuro */
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cartao-personalizado .card-text {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* --- BOTÃO (Sobrescrevendo o btn-primary do Bootstrap) --- */
+.cartao-personalizado .btn-primary {
+    background-color: #3f153d !important; /* Fundo Roxo Escuro */
+    border: none !important;
+    border-radius: 50px; /* Botão formato de pílula */
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%; /* Botão ocupa a largura toda */
+    transition: 0.3s ease;
+}
+
+.cartao-personalizado .btn-primary:hover {
+    background-color: #5a1e56 !important; /* Um roxo um pouco mais claro ao passar o mouse */
+    transform: scale(1.02); /* Cresce levemente */
+}
+
+.titulocard {
+    /* OBRIGATÓRIO: Força o título a ocupar a linha inteira */
+    width: 100%; 
+    
+    /* Centraliza o texto */
+    text-align: center;
+    
+    /* Estilo da Fonte */
+    color: #3f153d; /* O mesmo Roxo Escuro dos cards para combinar */
+    font-size: 2.5rem; /* Tamanho grande */
+    font-weight: 800; /* Bem negrito */
+    text-transform: uppercase; /* Caixa alta */
+    
+    /* Espaçamento */
+    margin-bottom: 40px; /* Empurra os cards para baixo */
+    margin-top: 20px;
+    
+    /* Decoração Opcional (uma linha embaixo do título) */
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8A3C52; /* Linha cor vinho */
+    display: inline-block; /* Faz a borda ficar só no tamanho do texto, não na tela toda */
+}
+
+/* Pequeno ajuste para garantir que a linha embaixo não bugue o layout */
+.container-cards {
+    align-content: flex-start; /* Ajuda a organizar o topo */
+}
+
+
+
+
+
+
+
+/* --- HERO SECTION (Banner Principal) --- */
+.hero-section {
+    /* Imagem de fundo (troquei por uma de cachorro) */
+    background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; /* Cobre todo o espaço */
+    background-position: center; /* Centraliza a foto */
+    background-repeat: no-repeat;
+    
+    /* MÁGICA: Coloca uma película Roxa Escura (#3f153d) transparente por cima da foto */
+    /* Isso garante que o texto branco seja legível */
+    box-shadow: inset 0 0 0 2000px rgba(63, 21, 61, 0.7); 
+    
+    padding: 150px 20px; /* Altura do banner (ajuste se quiser maior/menor) */
+    text-align: center; /* Centraliza tudo */
+    position: relative;
+    color: white; /* Texto branco */
+}
+
+/* Container para limitar a largura do texto */
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza o bloco na tela */
+}
+
+/* Título Grande */
+.hero-title {
+    font-size: 3.5rem; /* Bem grande */
+    font-weight: 800; /* Negrito forte */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra no texto para leitura */
+}
+
+/* Descrição */
+.hero-desc {
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-bottom: 40px;
+    color: #f0f0f0; /* Um branco levemente cinza para não cansar a vista */
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Área dos Botões */
+.hero-buttons {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; /* Para celular (um embaixo do outro) */
+}
+
+/* --- BOTÃO 1 (Vinho - Igual ao "Adotar" que fizemos antes) --- */
+.btn-hero-primary {
+    background-color: #8A3C52; /* Cor Vinho */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+.btn-hero-primary:hover {
+    background-color: #6d2f41; /* Escurece */
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem; /* Diminui o título no celular */
+    }
+    .hero-section {
+        padding: 80px 20px; /* Diminui a altura do banner */
+    }
 }
 
 /* ===========================
