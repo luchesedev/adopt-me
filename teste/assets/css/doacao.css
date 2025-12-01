@@ -1,0 +1,256 @@
+/* ===========================
+    RESET
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8e5c9;
+    color: #8A3C52;
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===========================
+    HEADER
+=========================== */
+header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #f8e5c9;
+    border-bottom: 3px solid #8A3C52;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* LOGO */
+.logo img {
+    width: 130px;
+    transition: transform 0.3s;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* BOTÃO FALE CONOSCO */
+#contato {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #8A3C52;
+    color: #f8e5c9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#contato:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* BOTÃO MENU MOBILE */
+.botao-menu {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #8A3C52;
+    cursor: pointer;
+    display: none;
+}
+
+/* NAV */
+.nav-itens {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 80px;
+}
+.list-nav {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.itens a {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 15px;
+    color: #8A3C52;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.itens a:hover {
+    background: #8A3C52;
+    color: #f8e5c9;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.linha{
+    border: 1px #000000 solid;
+}
+/* ===========================
+    RESPONSIVO HEADER
+=========================== */
+@media (max-width: 870px) {
+    header {
+        position: fixed !important;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .botao-menu {
+        display: block;
+    }
+    .nav-itens {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-color: #f9cb9c;
+        border-top: 2px solid #8A3C52;
+        padding: 15px 0;
+        margin-top: 10px;
+    }
+    .nav-itens.mostrar {
+        display: flex;
+    }
+    .list-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    #contato {
+        position: static;
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* ===========================
+    Conteudo
+=========================== */
+main{
+    flex-grow: 1;
+}
+
+/* Classes Customizadas para Cores da ONG/Tailwind */
+.bg-brand {
+    background-color: #8A3C52; /* Vinho/Marrom Escuro */
+}
+.hover\:bg-brand-strong:hover {
+    background-color: #6a2d3e; /* Marrom Mais Escuro */
+}
+.focus\:ring-brand-medium:focus {
+    --tw-ring-color: #f9cb9c; /* Bege Pêssego Claro para o anel de foco */
+}
+.text-brand {
+    color: #8A3C52;
+}
+
+/* REMOVIDO: A definição de background-color do .bg-dark para que o BG-IMAGE funcione */
+/* No Tailwind puro, o bg-dark aplicaria um filtro, mas nossa definição estava sobrepondo */
+
+.card-doacao {
+    /* Centraliza o card na tela (se estiver dentro de um container flex ou grid) */
+    margin: 30px auto; 
+    max-width: 100%; /* Limita a largura */
+    border: 2px solid #8A3C52; /* Borda da cor principal */
+ 
+  
+}
+
+.card-doacao .card-header {
+    background-color:  #ffffff; /* Fundo Vinho */
+    color: #8A3C52; /* Texto Claro */
+    font-size: 1.5rem; /* Aumenta a fonte do título */
+    font-weight: bold;
+   
+    padding: 15px;
+}
+
+.card-doacao .card-body {
+    color:  #f8e5c9;
+    background-color: #8A3C52; /* Texto Vinho */
+    padding: 30px 20px;
+    border-bottom: 4px solid #8A3C52
+}
+
+.card-doacao .blockquote p {
+    font-size: 1.15rem; /* Fonte um pouco maior para o texto */
+    font-style: italic;
+    margin-bottom: 0; /* Remove margem extra do parágrafo */
+}
+.rounded-base {
+    border-radius: 0.5rem;
+}
+.shadow-xs {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+/* Estilo do Botão Adotar/Whatsapp */
+.botaoadotar {
+    background-color: #8A3C52; /* Cor da marca */
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre texto e ícone */
+    text-decoration: none;
+}
+
+.botaoadotar:hover {
+    background-color: #6a2d3e; /* Cor mais escura no hover */
+    transform: scale(1.05); /* Leve aumento */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.banner-doacao {
+    /* Caminho da imagem (sai da pasta css e entra na img) */
+    background-image: url('../img/consulta.png');
+    
+    /* Faz a imagem cobrir tudo e centralizar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Efeito de escurecimento (Overlay) */
+    background-color: rgba(0, 0, 0, 0.6); 
+    background-blend-mode: multiply;
+    
+    /* Garante altura mínima para o banner ficar bonito */
+    min-height: 60vh; 
+    
+    /* Garante que o texto seja branco */
+    color: white;
+}
+
+/* ===========================
+    RODAPÉ
+=========================== */
+.meu-rodape {
+    background: #8A3C52 !important;
+    border-top: 2px #000000 solid;
+}
+.meu-rodape ul {
+    list-style: none;
+    padding-left: 0;
+}
