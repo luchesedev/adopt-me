@@ -1,0 +1,481 @@
+/* ===========================
+    RESET
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fef7e3; /* Cor do banner para evitar vazamento */
+    color: #8A3C52;
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===========================
+    HEADER
+=========================== */
+header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #f8e5c9;
+    border-bottom: 3px solid #8A3C52;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* LOGO */
+.logo img {
+    width: 130px;
+    transition: transform 0.3s;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* BOTÃO FALE CONOSCO */
+#contato {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #8A3C52;
+    color: #f8e5c9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#contato:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* BOTÃO MENU MOBILE */
+.botao-menu {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #8A3C52;
+    cursor: pointer;
+    display: none;
+}
+
+/* NAV */
+.nav-itens {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 80px;
+}
+.list-nav {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.itens a {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 15px;
+    color: #8A3C52;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.itens a:hover {
+    background: #8A3C52;
+    color: #f8e5c9;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+    RESPONSIVO HEADER
+=========================== */
+@media (max-width: 870px) {
+    header {
+        position: fixed !important;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .botao-menu {
+        display: block;
+    }
+    .nav-itens {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-color: #f9cb9c;
+        border-top: 2px solid #8A3C52;
+        padding: 15px 0;
+        margin-top: 10px;
+    }
+    .nav-itens.mostrar {
+        display: flex;
+    }
+    .list-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    #contato {
+        position: static;
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* ===========================
+    Conteudo
+=========================== */
+main{
+    flex-grow: 1;
+    background-color: #fef7e3; /* Cor do banner (creme) para evitar vazamento */
+}
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-top: 1px;
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fef7e3; /* Cor creme claro (sua seção "branca") */
+    color: #B07C85;
+    padding: 40px;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1300px;
+    box-sizing: border-box;
+}
+.banner-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.banner-conteudo h1 {
+    font-size: 50px;
+    color: #210c29;
+    margin: 0;
+}
+.banner-conteudo h3 {
+    color: #210c29;
+    margin: 0;
+}
+.botoes {
+    margin-top: 100px;
+    display: flex;
+    gap: 10px;
+}
+.btn-adote,
+.btn-sobrenos {
+    display: inline-block;
+    text-decoration: none;
+    width: 150px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+.btn-adote{
+    background-color:#210c29;
+    color: #feecd3;
+}
+.btn-sobrenos{
+    background-color:#f9cb9c;
+    color: #210c29;
+}
+.btn-sobrenos:hover{
+    background-color:#feecd3;
+    color: #210c29;
+    transform: scale(1.05);
+}
+.btn-adote:hover{
+    background-color:#210c29;
+    color: #feecd3;
+    transform: scale(1.05);
+}
+
+/* Slider (Imagem do Banner) */
+.slider {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    position: relative;
+    margin-top: 20px;
+}
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    border-radius: 10px;
+    border: 3px solid #8A3C52;
+}
+.slider img.active {
+    opacity: 1;
+}
+
+.linha {
+    border-bottom: 2px solid #210c29;
+    width: 100%;
+    background-color: transparent;
+    /* Linha toca o bloco abaixo */
+}
+
+/* Seção Animais */
+.bg-animais {
+    background-color: #f1c395; /* Cor bege/pêssego (sua seção "bege") */
+    padding-top: 80px; /* Cria o espaço interno bege */
+    padding-bottom: 50px;
+    width: 100%; 
+}
+.h1animal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: #210c29;
+    margin-bottom: 30px;
+}
+.pesquisa-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.pesquisa-container {
+    display: flex;
+    align-items: center;
+    background-color: #f9cb9c;
+    border-radius: 50px;
+    padding: 6px 12px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    gap: 10px;
+}
+#campo-pesquisa {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: #ffe8c8;
+    color: #210c29;
+}
+#btn-pesquisa {
+    padding: 12px 16px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#btn-pesquisa:hover {
+    transform: scale(1.05);
+    background-color: #6a2d3e;
+}
+.animais {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 0px; /* Evita espaço extra antes do rodapé */
+}
+.animal {
+    background-color: #f0d9ac;
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+/* AJUSTE PARA O CARD DO ANIMAL */
+/* IMAGEM PADRÃO (com espaço para o nome) */
+.ftcachorro {
+    width: 100%;
+    height: 180px; /* Altura que permite o nome aparecer */
+    object-fit: cover; 
+    transition: height 0.3s ease; 
+    border-radius: 10px 10px 0 0;
+    border: 2px #f1c395 solid;
+}
+.escritas {
+    opacity: 1; /* NOME VISÍVEL POR PADRÃO */
+    visibility: visible;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    position: absolute;
+    top: 185px; /* Posição do nome abaixo da imagem padrão */
+    width: 100%;
+    color: #210c29; 
+    font-weight: bold;
+}
+.escritas h1 {
+    font-size: 20px;
+    color: #210c29;
+    text-align: center;
+    margin: 5px 0; /* Espaçamento para o nome */
+}
+/* ESCONDE BOTÕES POR PADRÃO */
+.botoes-animal {
+    display: none; /* Esconde os botões por padrão */
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* HOVER NO CARD */
+.animal:hover .ftcachorro {
+    height: 150px; /* Imagem encolhe no hover */
+}
+.animal:hover .botoes-animal {
+    display: flex; /* MOSTRA OS BOTÕES NO HOVER */
+}
+.animal:hover .escritas {
+    top: 155px; /* Move o nome e botões para cima */
+}
+
+
+.animal .btn-adote,
+.animal .btn-saibamais {
+    width: 120px;
+    padding: 10px 0;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+
+.btn-saibamais {
+    background-color: #f9cb9c;
+    color: #210c29;
+    text-decoration: none;
+}
+.btn-saibamais:hover {
+    transform: scale(1.05);
+}
+.principal {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* RESPONSIVO CONTEUDO */
+@media (max-width: 1024px) {
+    /* ... (Regras de Responsividade inalteradas) ... */
+    .banner {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 20px;
+        margin-top: 180px;
+    }
+    .banner-conteudo h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-left: 20px;
+    }
+    .banner-conteudo h3 {
+        font-size: 18px;
+        padding-left: 40px;
+    }
+    .slider {
+        max-width: 300px;
+        height: 300px;
+        margin-top: 20px;
+    }
+    .banner-conteudo h1 {
+        font-size: 28px;
+        padding-left: 120px;
+    }
+    .banner-conteudo h3 {
+        padding-left: 10px;
+    }
+    .botoes {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        margin-left: 60px;
+    }
+    .btn-adote,
+    .btn-sobrenos {
+        width: 180px;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+}
+@media (max-width: 700px) {
+    .banner-conteudo h1 {
+        font-size: 28px;
+        margin-left: 50px;
+    }
+    .banner-conteudo h3 {
+        font-size: 16px;
+        margin-left: 70px;
+    }
+    .botoes {
+        padding-right: 100px;
+    }
+    .slider {
+        max-width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 600px) {
+    .btn-adote,
+    .btn-sobrenos {
+        width: 140px;
+        font-size: 14px;
+    }
+    .botoes {
+        gap: 10px;
+        padding-left: 55px;
+    }
+}
+@media (min-width: 769px) {
+    #pesquisa-movel {
+        display: none;
+    }
+}
+
+/* ===========================
+    RODAPÉ
+=========================== */
+.meu-rodape {
+    background: #8A3C52 !important;
+    margin-top: 0 !important; /* Força o Rodapé a grudar */
+}
+.meu-rodape ul {
+    list-style: none;
+    padding-left: 0;
+}
