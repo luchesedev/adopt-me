@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigos da Mia - Adoção</title>
-    <link rel="stylesheet" href="assets/css/adocao.css">
+    <title>Amigos da Mia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="assets/css/adocao.css">
     
-    <header class="cabecalho">
+</head>
+<body>
+    
+  <header>
     <div class="logo">
         <a href="principal.html">
-            <img src="assets/img/logo.png.png" alt="Amigos da Mia">
+            <img src="assets/img/logo.png" alt="Amigos da Mia">
         </a>
     </div>
-    <div class="menu-direita">
-        <nav class="paginas">
-            <a href="comunidade.html">Comunidade</a>
-            <a href="sobrenos.html">Sobre Nós</a>
-            <a href="animais.html">Animais</a>
-            <a href="adocao.html">Adoção</a>
-            <a href="doacao.html">Doe</a>
-        </nav>
-        <a id="contato" href="contato.html">FALE CONOSCO</a>
-    </div>
-</header>
 
-<div class="backgroundsobre">
+    <a id="contato" href="contato.html">Fale Conosco</a>
+
+    <button class="botao-menu" id="menu-toggle">☰</button>
+
+    <nav class="nav-itens" id="nav-itens">
+        <ul class="list-nav">
+            <li class="itens"><a href="comunidade.html">Comunidade</a></li>
+            <li class="itens"><a href="sobrenos.html">Sobre Nós</a></li>
+            <li class="itens"><a href="animais.html">Animais</a></li>
+            <li class="itens"><a href="adocao.html">Adoção</a></li>
+            <li class="itens"><a href="doacao.html">Doe</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main class="mt-5 conteudo">
+
+
+    <div class="backgroundsobre">
 </div>
 
 
@@ -69,8 +78,6 @@
                         <li>Já vacinado</li>
                         <li>Se dá bem com outros animais</li>
                     </ul>
-                    
-                    
                     <button type="button" onclick="abrirWhatsapp()" class="botaoadotar w-100">Adotar</button>
                 </div>
             </div>
@@ -134,17 +141,26 @@
 </section>
 
 
-        </div> </div> <footer class="rodape mt-5 p-4 text-center">
-        <ul class="rodape-info list-unstyled d-flex flex-wrap justify-content-center gap-4">
-            <li>📞 (11) 90304-2102</li>
-            <li>✉️ amigosdamia@gmail.com</li>
-            <li>📍 Rua das Flores, 123 - Guarulhos, SP</li>
-        </ul>
-        <p class="rodape-direitos mt-3">Projeto ADOPTME 2025 © Todos os direitos reservados</p>
-    </footer>
 
-    <script src="assets/js/adocao.js"></script>
-    <script src="assets/js/principal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  </main>
+
+
+<footer class="mt-5 p-4 bg-dark text-white text-center meu-rodape">
+  <div >
+    <ul class="rodape-info">
+        <li>📞 (11) 90304-2102</li>
+        <li>✉️ amigosdamia@gmail.com</li>
+        <li>📍 Rua das Flores, 123 - Guarulhos</li>
+    </ul>
+    <p class="rodape-direitos">
+        Projeto ADOPTME 2025 © Todos os direitos reservados
+    </p>
+</div>
+</footer>
+
+ <script src="assets/js/adocao.js"></script>
+<script src="assets/js/principal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
