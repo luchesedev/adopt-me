@@ -1,0 +1,312 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0d9ac;
+  padding-top: 200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #8A3C52;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: #f8e5c9;
+  border-bottom: 3px solid #8A3C52;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 130px;
+  transition: transform 0.3s;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+#contato {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #8A3C52;
+  color: #f8e5c9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+#contato:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.botao-menu {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #8A3C52;
+  cursor: pointer;
+  display: none;
+}
+
+/* NAV */
+.nav-itens {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 80px;
+}
+
+.list-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.itens a {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 15px;
+  color: #8A3C52;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.itens a:hover {
+  background: #8A3C52;
+  color: #f8e5c9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= MAIN ================= */
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.titulo-contato {
+  font-size: 40px;
+  color: #8A3C52;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 20px;
+  color: #8A3C52;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 700px;
+}
+
+.container-contato {
+  display: flex;
+  background-color: #f8e5c9;
+  border: 3px solid #8A3C52;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 85%;
+  max-width: 1200px;
+  padding: 40px;
+  gap: 50px;
+}
+
+/* FORMULÁRIO */
+
+#formulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#formulario h2 {
+  color: #8A3C52;
+  margin-bottom: 20px;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #8A3C52;
+}
+
+input,
+textarea {
+  border: 2px solid #8A3C52;
+  border-radius: 10px;
+  padding: 12px;
+  outline: none;
+  font-size: 16px;
+}
+
+textarea {
+  height: 140px;
+  resize: none;
+}
+
+.btn-enviar {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #8A3C52;
+  color: #f8e5c9;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: #6d2f41;
+  transform: scale(1.02);
+}
+
+/* BLOCO INFO */
+
+.bloco-info {
+  flex: 1;
+  background-color: #f0d9ac;
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid #8A3C52;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.bloco-info h2 {
+  color: #8A3C52;
+  margin-bottom: 15px;
+}
+
+.bloco-info p {
+  margin: 10px 0;
+  color: #8A3C52;
+  font-size: 17px;
+}
+
+.redes a {
+  color: #8A3C52;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+}
+.redes a:hover {
+  color: #6d2f41;
+}
+
+/* ================= FOOTER ================= */
+
+.meu-rodape {
+  border-top: 2px solid #210c29;
+  background: #8A3C52 !important;
+  margin-top: auto;
+}
+
+.meu-rodape ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+
+/* MENU MOBILE */
+@media (max-width: 870px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body {
+    padding-top: 260px;
+  }
+
+  .botao-menu {
+    display: block;
+  }
+
+  .nav-itens {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: #f9cb9c;
+    border-top: 2px solid #8A3C52;
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+
+  .nav-itens.mostrar {
+    display: flex;
+  }
+
+  .list-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #contato {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* RESPONSIVIDADE DOS CARDS (FORM + INFO) */
+@media (max-width: 950px) {
+  .container-contato {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #formulario,
+  .bloco-info {
+    width: 100%;
+  }
+}
+
+/* MOBILE PEQUENO */
+@media (max-width: 600px) {
+  .titulo-contato {
+    font-size: 32px;
+  }
+
+  .subtitulo {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+
+  .container-contato {
+    padding: 20px;
+  }
+
+  input,
+  textarea {
+    font-size: 15px;
+  }
+
+  .btn-enviar {
+    font-size: 16px;
+  }
+}

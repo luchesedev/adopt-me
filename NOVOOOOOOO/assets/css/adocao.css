@@ -1,0 +1,387 @@
+/* ===========================
+   RESET E ESTRUTURA
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7e6ec; /* Seu fundo rosa claro */
+  color: #8A3C52;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* ===========================
+   HEADER (Mantido o seu original)
+=========================== */
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #f8e5c9;
+  border-bottom: 3px solid #8A3C52;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 130px;
+  transition: transform 0.3s;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+#contato {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #8A3C52;
+  color: #f8e5c9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+#contato:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.botao-menu {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #8A3C52;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-itens {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 80px;
+}
+.list-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.itens a {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 15px;
+  color: #8A3C52;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.itens a:hover {
+  background: #8A3C52;
+  color: #f8e5c9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* RESPONSIVO DO HEADER */
+@media (max-width: 870px) {
+  header {
+    align-items: flex-start;
+  }
+  .botao-menu {
+    display: block;
+  }
+  .nav-itens {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: #f9cb9c;
+    border-top: 2px solid #8A3C52;
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+  .nav-itens.mostrar {
+    display: flex;
+  }
+  .list-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  #contato {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* ===========================
+   ESTILO DA MOLDURA ROXA (Recuperado)
+=========================== */
+.backgroundsobre {
+    background-color: #f8ede3; /* Roxo */
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 90%; /* Ajuste para não colar na tela */
+    overflow: hidden;
+}
+
+/* ===========================
+   CARROSSEL E INFORMAÇÕES (Seu estilo)
+=========================== */
+#carouselExample {
+    width: 100%; 
+    border: 5px solid rgb(211, 211, 211);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.info-container {
+    background-color: #ffffff;
+    width: 100%; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1); 
+    height: 100%; /* Para alinhar altura */
+}
+
+.titulocachorro {
+    color: #3f153d;
+    margin-top: 0;
+    font-size: 4rem; 
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .titulocachorro {
+        font-size: 3rem;
+    }
+}
+
+.descricao, .adote {
+    color: #3f153d;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.adote { margin-top: 20px; }
+
+.info-container ul {
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
+/* --- BOTÃO ADOTAR (CORRIGIDO PARA LINKS) --- */
+.botaoadotar {
+    background-color: #3f153d;
+    color: #ffffff;
+    padding: 12px 30px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+
+    /* REGRAS ESSENCIAIS PARA TAG <A> */
+    display: block;        /* Faz ocupar o espaço como bloco */
+    text-align: center;    /* Centraliza o texto */
+    text-decoration: none; /* Tira o sublinhado */
+}
+
+.botaoadotar:hover {
+    background-color: #5a1e56;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    color: #ffffff;        /* Mantém o texto branco */
+    text-decoration: none; /* Garante sem sublinhado no hover */
+}
+
+/* ===========================
+   CARDS (Parte Importante para o JS)
+=========================== */
+.titulocard {
+    width: 100%; 
+    text-align: center;
+    color: #3f153d;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 40px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8A3C52;
+    display: inline-block;
+}
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.cartao-personalizado {
+    width: 18rem;
+    border: 2px solid #3f153d;
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-personalizado:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(63, 21, 61, 0.4);
+    border-color: #8A3C52;
+}
+
+.cartao-personalizado img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 2px solid #3f153d;
+}
+
+.cartao-personalizado .card-body {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cartao-personalizado .card-title {
+    color: #3f153d;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cartao-personalizado .card-text {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* BOTÃO VER DETALHES (Esse é o que o JS usa) */
+.cartao-personalizado .btn-primary {
+    background-color: #3f153d !important;
+    border: none !important;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    color: white; /* Garante texto branco */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cartao-personalizado .btn-primary:hover {
+    background-color: #5a1e56 !important;
+    transform: scale(1.02);
+}
+
+/* ===========================
+   HERO SECTION & RODAPÉ
+=========================== */
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 2000px rgba(63, 21, 61, 0.7); 
+    padding: 150px 20px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.btn-hero-primary {
+    background-color: #8A3C52;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.btn-hero-primary:hover {
+    background-color: #6d2f41;
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+.meu-rodape {
+  background: #8A3C52 !important;
+}
+.meu-rodape ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .rodape-info { flex-direction: column; }
+}
+
+
+
+

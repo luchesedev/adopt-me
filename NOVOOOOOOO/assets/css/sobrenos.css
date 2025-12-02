@@ -1,0 +1,260 @@
+/* ===========================
+   RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7e6ec;
+  color: #8A3C52;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #f8e5c9;
+  border-bottom: 3px solid #8A3C52;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.logo img {
+  width: 130px;
+  transition: transform 0.3s;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* BOTÃO FALE CONOSCO */
+#contato {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #8A3C52;
+  color: #f8e5c9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+#contato:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* BOTÃO MENU MOBILE */
+.botao-menu {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #8A3C52;
+  cursor: pointer;
+  display: none;
+}
+
+/* NAV */
+.nav-itens {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 80px;
+}
+.list-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.itens a {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 15px;
+  color: #8A3C52;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.itens a:hover {
+  background: #8A3C52;
+  color: #f8e5c9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+   RESPONSIVO HEADER
+=========================== */
+@media (max-width: 870px) {
+  header {
+    position: fixed !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .botao-menu {
+    display: block;
+  }
+  .nav-itens {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: #f9cb9c;
+    border-top: 2px solid #8A3C52;
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+  .nav-itens.mostrar {
+    display: flex;
+  }
+  .list-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  #contato {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* ===========================
+   Conteudo
+=========================== */
+main{
+  flex-grow: 1;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+.meu-rodape {
+  border-top: 2px solid #210c29;
+  background: #8A3C52 !important;
+}
+.meu-rodape ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.conteudo {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  margin-top: 100px;
+}
+
+.principal {
+  text-align: left;
+  margin-bottom: 180px;
+}
+
+.container {
+  width: 100vw;                  /* 100% da largura da janela */
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw); /* desloca para a esquerda até a borda da viewport */
+  margin-right: calc(50% - 50vw);
+  background: #8A3C52;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  padding: 40px 0;               /* espaço interno — opcional */
+}
+
+
+
+
+
+.container img {
+  width: 500px;
+  height: 500px;
+  margin-top: 3px;
+  margin-left: 100px;
+}
+
+
+/* Cards sobre nós */
+
+.opcoes {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+  
+}
+
+.opcao {
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  width: 520px;
+  height: 300px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 0 30px 30px 30px;
+  text-align: center;
+  color: #8A3C52;
+  font-weight: 500;
+   background: #f8e5c9;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.opcao:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.opcao > h2 {
+  background-color: #8A3C52;
+  font-size: 34px;
+  color:#f8e5c9;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  padding: 10px 0;
+  border-radius: 15px 15px 0 0;
+}
+
+.opcao > p {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.texto {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+  padding: 5px 30px 30px 30px;
+  margin-right: 200px;
+}
+
+.texto > h4{
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  display: flex;
+  text-align: center;
+  padding: 50px 30px 30px 0px;
+  font-size: 50px;
+}
