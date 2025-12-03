@@ -1,0 +1,187 @@
+.quem-somos {
+    background-color: #8A3C52 !important;
+}
+
+/* A imagem diminui automaticamente */
+.img-quem-somos {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajuste do título */
+.titulo1 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Títulos*/
+.container h1{
+    color: #8A3C52; 
+    margin-top: 50px;
+}
+
+/* ===========================
+   LAYOUT DE CARDS (Missão, Visão, Valores)
+=========================== */
+
+/* 1. Container da Linha (Flexbox) */
+.row.justify-content-center.g-4 {
+    display: flex;
+    flex-wrap: wrap; /* Garante responsividade */
+}
+
+/* 2. As colunas devem permitir que o card cresça */
+.row.justify-content-center.g-4 > [class*='col-'] {
+    display: flex; 
+}
+
+/* 3. Estilo Visual do Card */
+.card-mvv {
+    width: 100%; 
+    display: flex;
+    flex-direction: column; /* Organiza itens um embaixo do outro */
+    
+    /* Padding igual em todos os lados para alinhar visualmente as bordas */
+    padding: 2rem 1.5rem; 
+    
+    border: 2px solid #8A3C52;
+    background-color: #f7e6ec;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-mvv:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(138, 60, 82, 0.2);
+}
+
+/* --- ALINHAMENTO DOS TÍTULOS --- */
+.card-mvv h3 {
+    color: #8A3C52;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    
+    /* Esta margem define a distância exata entre o título e o texto em todos os cards */
+    margin-bottom: 25px; 
+    
+    /* Garante que o título esteja centralizado */
+    text-align: center;
+    width: 100%;
+}
+
+/* --- ALINHAMENTO DOS TEXTOS (COMUNS E VALORES) --- */
+.card-mvv p {
+    color: #3f153d;
+    font-size: 1rem;
+    margin: 0;
+    
+    /* Centralização vertical/horizontal */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* =======================================================
+   ESTILO DO CARD "VALORES"
+======================================================= */
+
+.texto-destaque-valores {
+    font-size: 1.4rem !important; 
+    line-height: 1.8 !important;
+    font-weight: 600;
+    color: #3f153d!important; 
+    margin: 0 !important; 
+    width: 100%;
+}
+
+.mt-3 {
+    color: #3f153d;
+    font-size: 1rem;
+    margin-top: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
+.fw-bold text-center {
+    color: #3f153d;
+    font-size: 1rem;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
+.fw-bold {
+    margin-top: 80px;
+}
+
+/* ============================================================
+   🔥 NOVA SEÇÃO — RESGATES & ADOÇÕES (seguindo o estilo Quem Somos)
+=============================================================== */
+
+.textos-sobre {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 80px auto;
+    flex-wrap: wrap;
+}
+
+.textos-sobre > div {
+    width: 45%;
+    min-width: 320px;
+    padding: 40px; /* igual ao Quem Somos */
+    color: #ffffff;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Títulos */
+.textos-sobre h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Parágrafos */
+.textos-sobre p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* -------------------------------
+   GRADIENTES EM SEQUÊNCIA
+-------------------------------- */
+
+/* RESGATES – 15% mais claro que #8A3C52 */
+.resgates-sobre {
+    border-radius: 5px;
+    background: linear-gradient(
+        180deg,
+        #9D4A60 0%,
+        #AF5770 100%
+    );
+}
+
+/* ADOÇÕES – 30% mais claro */
+.adocoes-sobre {
+    border-radius: 5px;
+    background: linear-gradient(
+        180deg,
+        #B8687F 0%,
+        #CC7A90 100%
+    );
+}
