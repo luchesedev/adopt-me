@@ -1,0 +1,134 @@
+/* ===========================
+   Conteudo
+=========================== */
+main{
+    flex-grow: 1;
+    /* Garante que o conteúdo comece abaixo do header fixo */
+    padding-top: 100px; 
+}
+.titulo {
+    text-align: center;
+    color: #8A3C52;
+}
+.subtitulo{
+    text-align: center;
+    background-color: #f7e6ec;
+    margin-top: 40px;
+}
+.linha {
+    border-bottom: 1.2px solid #6f2f42;
+    width: 100%;
+    padding-top: 20px;
+}
+.formulario {
+    /* Corrigido a sintaxe da borda */
+    border: 1.5px solid #6f2f42; 
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #0002;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8A3C52;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background: #8A3C52;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#criarCard:hover {
+    background: #6f2f42;
+}
+
+/* --- REGRAS CORRETAS PARA OS CARDS --- */
+.cards-container {
+    margin: 25px auto; /* Usar 'auto' para centralizar o container principal se ele não for 100% da largura */
+    display: grid;
+    /* Ajuste Principal: Limita a largura máxima de cada coluna (e, portanto, do card) a 350px.
+       Isso impede que um único card se estique demais.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 370px)); 
+    gap: 20px;
+    /* Centraliza os cards dentro do container */
+    justify-content: center; 
+}
+
+.card {
+    /* Remove margens e largura fixas para que o Grid controle o tamanho */
+    margin: 0; 
+    width: 100%; /* Ocupa a largura da coluna do Grid (máx 350px) */
+    
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid #210c29; 
+    
+    /* Permite que o conteúdo interno use Flexbox para alinhar o botão */
+    display: flex;
+    flex-direction: column;
+}
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    /* Altura Fixa: Garante que todas as imagens tenham 200px de altura */
+    height: 200px; 
+    /* object-fit: cover: Garante que a imagem preencha o espaço sem esticar, cortando as bordas */
+    object-fit: cover; 
+    border-bottom: 2px solid #210c29;
+}
+
+.card h3 {
+    margin: 15px 15px 5px;
+    font-size: 22px;
+    color: #8A3C52;
+}
+
+.card p {
+    margin: 0 15px 15px;
+    color: #444;
+    line-height: 1.5;
+    /* Empurra o botão para o fundo */
+    flex-grow: 1; 
+}
+
+.btnExcluir {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background .2s;
+    width: calc(100% - 30px); 
+    display: block;
+    text-align: center;
+}
+
+.btnExcluir:hover {
+    background: #e63946;
+}
